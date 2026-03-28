@@ -15,9 +15,9 @@
           
           <!-- Control de renderización RBAC basado en Roles/Permisos nativamente integrado -->
           <li v-if="hasRole('Superadministrador') || hasPermission('view users')">
-            <a href="#" class="block px-6 py-2 text-gray-500 dark:text-gray-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/40 hover:text-indigo-600 font-medium transition-colors">
+            <router-link :to="{ name: 'Users' }" class="block px-6 py-2 text-gray-500 dark:text-gray-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/40 hover:text-indigo-600 font-medium transition-colors" active-class="bg-indigo-50 dark:bg-indigo-900/40 text-indigo-600">
               👥 Gestión de Usuarios
-            </a>
+            </router-link>
           </li>
           <li>
             <a href="#" class="block px-6 py-2 text-gray-500 dark:text-gray-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/40 hover:text-indigo-600 font-medium transition-colors">

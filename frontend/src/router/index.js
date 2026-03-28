@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
 
+import Users from '../views/Users/Users.vue'
+import UserForm from '../views/Users/UserForm.vue'
+
 const routes = [
   {
     path: '/login',
@@ -17,6 +20,22 @@ const routes = [
         path: '',
         name: 'Dashboard',
         component: () => import('../views/Dashboard.vue')
+      },
+      {
+        path: '/users',
+        name: 'Users',
+        component: Users
+      },
+      {
+        path: '/users/create',
+        name: 'UserCreate',
+        component: UserForm
+      },
+      {
+        path: '/users/:id/edit',
+        name: 'UserEdit',
+        component: UserForm,
+        props: true
       }
     ]
   }
